@@ -1,0 +1,11 @@
+FROM python:3.9
+
+WORKDIR /app
+
+# Copy the odd client script
+COPY Client_Odd/client_odd.py /app/client_odd.py
+
+# Set environment variable for script name
+ENV APP_SCRIPT="client_odd.py"
+
+CMD ["sh", "-c", "python /app/$APP_SCRIPT"]

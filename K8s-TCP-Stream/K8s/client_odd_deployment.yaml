@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-odd
+  namespace: akshar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client-odd
+  template:
+    metadata:
+      labels:
+        app: client-odd
+    spec:
+      containers:
+        - name: client-odd
+          image: akshar-client-odd
+          imagePullPolicy: IfNotPresent
